@@ -4,18 +4,11 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   const config = new DocumentBuilder()
     .setTitle('User Behavior Analytics API')
     .setDescription('API for tracking and analyzing user behavior events')
     .setVersion('1.0')
-    .addApiKey(
-      {
-        type: 'apiKey',
-        name: 'x-api-key',
-        in: 'header',
-      },
-      'apiKey',
-    )
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

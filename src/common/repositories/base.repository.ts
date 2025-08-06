@@ -1,6 +1,10 @@
 import { Model, FilterQuery } from 'mongoose';
 
 export class BaseRepository<T> {
+  /**
+   * Base repository with generic functions to work with Mongo Schemas
+   * @param model T
+   */
   constructor(protected readonly model: Model<T>) {}
 
   async create(data: Partial<T>): Promise<T> {
