@@ -28,7 +28,7 @@ export class CreateEventDto {
   @ApiProperty({
     example: {
       url: '/dashboard',
-      referref: '/auth',
+      referrer: '/auth',
       device: 'mobile',
       browser: 'Firefox',
     },
